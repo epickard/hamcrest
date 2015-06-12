@@ -21,6 +21,7 @@ public class Matchers {
 		assertThat(a, describedAs("greeting", is(not(nullValue()))));	
 	}
 	
+	
 	@Test
 	public void testMatcherAllOf() {
 		String a = "hello";
@@ -39,5 +40,13 @@ public class Matchers {
 		String a = "hello";
 		String b = "Hello";
 		assertThat(a, is(not(b)));
+	}
+		
+	@Test
+	//Logical equality (versus reference equality)
+	public void testMatcherEqualTo() {
+		String a = "hello";
+		String b = "hello";
+		assertThat(a, is(equalTo(b)));
 	}
 }
